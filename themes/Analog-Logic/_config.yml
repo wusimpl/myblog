@@ -1,0 +1,39 @@
+# Retro-Futurism Theme Configuration
+# 复古未来主义主题配置
+
+# 站点信息
+author: wusimpl
+bio: 爱真理，爱智慧
+avatar: /images/icon.png
+
+# 社交链接
+social:
+  github: https://github.com/wusimpl
+  music: https://music.163.com
+  email: mailto:your@email.com
+
+# 导航菜单
+menu:
+  Home: /
+  Archives: /archives
+  Tags: /tags
+  About: /about
+
+# 文章设置
+post:
+  toc: true
+  excerpt_length: 200
+
+# 首页 Bento Grid 设置
+bento:
+  feature_count: 1  # 置顶/特色文章数量
+
+# 动态卡片 (Hero Section)
+widgets:
+  github_activity: true
+  music_now_playing: true
+  crypto_fear_index: false
+
+# 代码高亮
+highlight:
+  theme: one-dark-pro

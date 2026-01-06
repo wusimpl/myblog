@@ -1,0 +1,51 @@
+<div class="category-page">
+  <header class="page-header">
+    <h1 class="page-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+      </svg>
+      <% if (page.category) { %>
+        <%= page.category %>
+      <% } else { %>
+        Categories
+      <% } %>
+    </h1>
+    <% if (page.category) { %>
+      <p class="page-desc">共 <%= page.posts.length %> 篇文章</p>
+    <% } %>
+  </header>
+
+  <% if (!page.category) { %>
+    <!-- 分类列表 -->
+    <div class="category-grid">
+      <% site.categories.each(function(cat){ %>
+        <a href="<%- url_for(cat.path) %>" class="category-card">
+          <span class="category-name"><%= cat.name %></span>
+          <span class="category-count"><%= cat.posts.length %> posts</span>
+        </a>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <!-- 分类下的文章列表 -->
+    <div class="category-posts">
+      <% page.posts.each(function(post){ %>
+        <article class="category-post-item">
+          <time class="post-date"><%= date(post.date, 'YYYY.MM.DD') %></time>
+          <h3 class="post-title">
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </h3>
+          <% if (post.tags && post.tags.length) { %>
+            <div class="post-tags">
+              <% post.tags.toArray().slice(0, 2).forEach(function(tag){ %>
+                <span class="tag"><%= tag.name %></span>
+              <% }); %>
+            </div>
+          <% } %>
+        </article>
+      <% }); %>
+    </div>
+  <% } %>
+</div>
+
+<%- partial('_partial/pagination') %>

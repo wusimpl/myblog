@@ -1,38 +1,68 @@
 ---
-title: Hello World
+title: Hello World - 复古未来主义主题
+date: 2024-12-04 10:00:00
+tags:
+  - Hexo
+  - Theme
+  - Design
+categories:
+  - 技术
+cover: /images/icon.png
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+欢迎使用 **Retro-Futurism** 主题！这是一套融合了复古美学与未来科技感的 Hexo 博客主题。
 
-### Create a new post
+<!-- more -->
 
-``` bash
-$ hexo new "My New Post"
+## 设计理念
+
+这套主题的灵感来源于：
+
+- 🎸 吉他效果器的精密旋钮
+- 🎼 乐谱的优雅排版
+- 💻 IDE 代码编辑器的结构美学
+
+## 代码展示
+
+```cpp
+#include <iostream>
+#include <vector>
+
+class RetroFuturism {
+public:
+    void greet() {
+        std::cout << "Hello, World!" << std::endl;
+    }
+    
+    int calculate(int a, int b) {
+        return a + b;
+    }
+};
+
+int main() {
+    RetroFuturism theme;
+    theme.greet();
+    return 0;
+}
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+## 引用样式
 
-### Run server
+> 爱真理，爱智慧。
+> 
+> 在代码与音乐之间，寻找生活的节奏。
 
-``` bash
-$ hexo server
-```
+## 链接效果
 
-More info: [Server](https://hexo.io/docs/server.html)
+这是一个[示例链接](#)，鼠标悬停时会有高亮笔效果。
 
-### Generate static files
+## 列表展示
 
-``` bash
-$ hexo generate
-```
+1. Bento Grid 便当盒布局
+2. 明暗主题切换（吉他拨档开关）
+3. macOS 风格代码块
+4. 阅读进度条
 
-More info: [Generating](https://hexo.io/docs/generating.html)
+---
 
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+感谢使用这套主题！

@@ -1,0 +1,41 @@
+<% if (page.total > 1) { %>
+<nav class="pagination">
+  <% if (page.prev) { %>
+    <a href="<%- url_for(page.prev_link) %>" class="page-btn prev">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      <span>Prev</span>
+    </a>
+  <% } else { %>
+    <span class="page-btn prev disabled">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      <span>Prev</span>
+    </span>
+  <% } %>
+  
+  <span class="page-info">
+    <span class="current"><%= page.current %></span>
+    <span class="divider">/</span>
+    <span class="total"><%= page.total %></span>
+  </span>
+  
+  <% if (page.next) { %>
+    <a href="<%- url_for(page.next_link) %>" class="page-btn next">
+      <span>Next</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </a>
+  <% } else { %>
+    <span class="page-btn next disabled">
+      <span>Next</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </span>
+  <% } %>
+</nav>
+<% } %>

@@ -1,0 +1,40 @@
+<div class="archive-page">
+  <header class="page-header">
+    <h1 class="page-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+      </svg>
+      Archives
+    </h1>
+    <p class="page-desc">共 <%= site.posts.length %> 篇文章</p>
+  </header>
+
+  <div class="archive-timeline">
+    <% var currentYear = ''; %>
+    <% page.posts.each(function(post){ %>
+      <% var year = date(post.date, 'YYYY'); %>
+      <% if (year !== currentYear) { %>
+        <% currentYear = year; %>
+        <div class="archive-year">
+          <span class="year-label"><%= year %></span>
+          <div class="year-line"></div>
+        </div>
+      <% } %>
+      
+      <article class="archive-item">
+        <div class="archive-node"></div>
+        <div class="archive-content">
+          <time class="archive-date"><%= date(post.date, 'MM.DD') %></time>
+          <h3 class="archive-title">
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </h3>
+          <% if (post.categories && post.categories.length) { %>
+            <span class="archive-category"><%= post.categories.toArray()[0].name %></span>
+          <% } %>
+        </div>
+      </article>
+    <% }); %>
+  </div>
+</div>
+
+<%- partial('_partial/pagination') %>

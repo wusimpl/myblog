@@ -1,0 +1,145 @@
+/* One Dark Pro - Code Syntax Highlighting */
+
+.highlight {
+  position: relative;
+  margin: 24px 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #282C34;
+  box-shadow: var(--shadow-md);
+}
+
+/* macOS Window Header */
+.highlight::before {
+  content: '';
+  display: block;
+  height: 36px;
+  background: linear-gradient(180deg, #3D3F4A 0%, #2D303E 100%);
+  border-bottom: 1px solid #44475A;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FF5F56;
+  box-shadow: 20px 0 0 #FFBD2E, 40px 0 0 #27CA40;
+}
+
+.highlight table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.highlight .gutter {
+  width: 40px;
+  padding: 16px 0;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.2);
+  border-right: 1px solid #3E4451;
+  user-select: none;
+}
+
+.highlight .gutter pre {
+  padding: 0 12px;
+  color: #636D83;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.highlight .code {
+  padding: 16px 0;
+}
+
+.highlight .code pre {
+  padding: 0 20px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ABB2BF;
+}
+
+.highlight pre {
+  margin: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Language Label */
+.highlight figcaption {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #636D83;
+  text-transform: uppercase;
+}
+
+/* One Dark Pro Colors */
+.highlight .comment,
+.highlight .quote { color: #5C6370; font-style: italic; }
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .addition { color: #C678DD; }
+
+.highlight .number,
+.highlight .string,
+.highlight .meta .meta-string,
+.highlight .literal,
+.highlight .doctag,
+.highlight .regexp { color: #98C379; }
+
+.highlight .title,
+.highlight .section,
+.highlight .name,
+.highlight .selector-id,
+.highlight .selector-class { color: #E5C07B; }
+
+.highlight .attribute,
+.highlight .attr,
+.highlight .variable,
+.highlight .template-variable,
+.highlight .class .title,
+.highlight .type { color: #E06C75; }
+
+.highlight .symbol,
+.highlight .bullet,
+.highlight .subst,
+.highlight .meta,
+.highlight .meta .keyword,
+.highlight .selector-attr,
+.highlight .selector-pseudo,
+.highlight .link { color: #56B6C2; }
+
+.highlight .built_in,
+.highlight .deletion { color: #E06C75; }
+
+.highlight .function { color: #61AFEF; }
+
+.highlight .tag { color: #E06C75; }
+.highlight .tag .attr { color: #D19A66; }
+.highlight .tag .string { color: #98C379; }
+
+.highlight .emphasis { font-style: italic; }
+.highlight .strong { font-weight: bold; }
+
+/* Line Highlight */
+.highlight .line.marked {
+  background: rgba(97, 175, 239, 0.1);
+  border-left: 3px solid #61AFEF;
+  margin-left: -3px;
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .highlight {
+  background: #21252B;
+}
+
+[data-theme="dark"] .highlight::before {
+  background: linear-gradient(180deg, #2C313A 0%, #21252B 100%);
+}

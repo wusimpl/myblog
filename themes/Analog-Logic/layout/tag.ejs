@@ -1,0 +1,44 @@
+<div class="tag-page">
+  <header class="page-header">
+    <h1 class="page-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+        <line x1="7" y1="7" x2="7.01" y2="7"/>
+      </svg>
+      <% if (page.tag) { %>
+        #<%= page.tag %>
+      <% } else { %>
+        Tags
+      <% } %>
+    </h1>
+    <% if (page.tag) { %>
+      <p class="page-desc">共 <%= page.posts.length %> 篇文章</p>
+    <% } %>
+  </header>
+
+  <% if (!page.tag) { %>
+    <!-- 标签云 -->
+    <div class="tag-cloud">
+      <% site.tags.each(function(tag){ %>
+        <a href="<%- url_for(tag.path) %>" class="tag-item" data-count="<%= tag.posts.length %>">
+          <span class="tag-name">#<%= tag.name %></span>
+          <span class="tag-count"><%= tag.posts.length %></span>
+        </a>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <!-- 标签下的文章列表 -->
+    <div class="tag-posts">
+      <% page.posts.each(function(post){ %>
+        <article class="tag-post-item">
+          <time class="post-date"><%= date(post.date, 'YYYY.MM.DD') %></time>
+          <h3 class="post-title">
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </h3>
+        </article>
+      <% }); %>
+    </div>
+  <% } %>
+</div>
+
+<%- partial('_partial/pagination') %>
